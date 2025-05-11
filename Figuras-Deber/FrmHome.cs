@@ -15,6 +15,8 @@ namespace Figuras_Deber
 {
     public partial class FrmHome : Form
     {
+        private Form currentFigureForm; // Para mantener una referencia al formulario de figura actualmente abierto
+
         public FrmHome()
         {
             InitializeComponent();
@@ -32,32 +34,32 @@ namespace Figuras_Deber
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void triánguloToolStripMenuItem_Click(object sender, EventArgs e)
+        // Método centralizado para mostrar formularios de figuras
+        private void ShowFigureForm(Form newForm)
         {
-            FrmTriangle frmTriangle = new FrmTriangle();
-            frmTriangle.MdiParent = this;
-            CenterWindows(frmTriangle);
-            frmTriangle.Show();
+            // Cerrar el formulario actual si existe
+            if (currentFigureForm != null && !currentFigureForm.IsDisposed)
+            {
+                currentFigureForm.Close();
+            }
+            newForm.MinimizeBox = false;
+            newForm.MaximizeBox = false;
+            newForm.ControlBox = false;
+            // Configurar y mostrar el nuevo formulario
+            newForm.MdiParent = this;
+            CenterWindows(newForm);
+            newForm.Show();
 
+            // Almacenar referencia al nuevo formulario
+            currentFigureForm = newForm;
         }
+
         public void CloseForn(Form form)
         {
             form.Close();
-        }
-
-        private void mnuCircle_Click(object sender, EventArgs e)
-        {
-            FrmCircle frmCircle = new FrmCircle();
-            frmCircle.MdiParent = this;
-
-
-            CenterWindows(frmCircle);
-
-
-            frmCircle.Show();
         }
         public void CenterWindows(Form form)
         {
@@ -66,7 +68,7 @@ namespace Figuras_Deber
             // Calcular la posición para centrar el formulario dentro de FrmHome
             int x = (this.ClientSize.Width - form.Width) / 2;
             int y = (this.ClientSize.Height - form.Height) / 2;
-            form.Location = new Point(x, y+30);
+            form.Location = new Point(x, y + 30);
         }
 
         private void mnuFigura_Click(object sender, EventArgs e)
@@ -74,139 +76,100 @@ namespace Figuras_Deber
 
         }
 
+        // Todos los handlers de menú ahora usan el método ShowFigureForm
+        private void triánguloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowFigureForm(new FrmTriangle());
+        }
+
+        private void mnuCircle_Click(object sender, EventArgs e)
+        {
+            ShowFigureForm(new FrmCircle());
+        }
+
         private void mnuEllipse_Click(object sender, EventArgs e)
         {
-            FrmEllipse frmEllipse = new FrmEllipse();
-            frmEllipse.MdiParent = this;
-            CenterWindows(frmEllipse);
-            frmEllipse.Show();
+            ShowFigureForm(new FrmEllipse());
         }
 
         private void mnuOval_Click(object sender, EventArgs e)
         {
-            FrmOval frmOval = new FrmOval();
-            frmOval.MdiParent = this;
-            CenterWindows(frmOval);
-            frmOval.Show();
+            ShowFigureForm(new FrmOval());
         }
 
         private void mnuRectangle_Click(object sender, EventArgs e)
         {
-            FrmRectangle frmRectangle = new FrmRectangle();
-            frmRectangle.MdiParent = this;
-            CenterWindows(frmRectangle);
-            frmRectangle.Show();
+            ShowFigureForm(new FrmRectangle());
         }
 
         private void mnuTrapeze_Click(object sender, EventArgs e)
         {
-            FrmTrapeze frmTrapeze = new FrmTrapeze();
-            frmTrapeze.MdiParent = this;
-            CenterWindows(frmTrapeze);
-            frmTrapeze.Show();
+            ShowFigureForm(new FrmTrapeze());
         }
 
         private void mnuIsoscelesTrapezoid_Click(object sender, EventArgs e)
         {
-            FrmIsoscelesTrapezoid frmIsoscelesTrapezoid = new FrmIsoscelesTrapezoid();
-            frmIsoscelesTrapezoid.MdiParent = this;
-            CenterWindows(frmIsoscelesTrapezoid);
-            frmIsoscelesTrapezoid.Show();
+            ShowFigureForm(new FrmIsoscelesTrapezoid());
         }
 
         private void mnuSquare_Click(object sender, EventArgs e)
         {
-
-            FrmSquare frmSquare = new FrmSquare();
-            frmSquare.MdiParent = this;
-            CenterWindows(frmSquare);
-            frmSquare.Show();
-
-        
-    }
+            ShowFigureForm(new FrmSquare());
+        }
 
         private void mnuDeltoid_Click(object sender, EventArgs e)
         {
-            FrmDeltoid frmDeltoid = new FrmDeltoid();
-            frmDeltoid.MdiParent = this;
-            CenterWindows(frmDeltoid);
-            frmDeltoid.Show();
+            ShowFigureForm(new FrmDeltoid());
         }
 
         private void mnuRhomboid_Click(object sender, EventArgs e)
         {
-            FrmRhomboid frmRhomboid = new FrmRhomboid();
-            frmRhomboid.MdiParent = this;
-            CenterWindows(frmRhomboid);
-            frmRhomboid.Show();
+            ShowFigureForm(new FrmRhomboid());
         }
 
         private void mnuTrapezoid_Click(object sender, EventArgs e)
         {
-            FrmTrapezoid frmTrapezoid = new FrmTrapezoid();
-            frmTrapezoid.MdiParent = this;
-            CenterWindows(frmTrapezoid);
-            frmTrapezoid.Show();
+            ShowFigureForm(new FrmTrapezoid());
         }
 
         private void mnuHeptagon_Click(object sender, EventArgs e)
         {
-            FrmHeptagon frmHeptagon = new FrmHeptagon();
-            frmHeptagon.MdiParent = this;
-            CenterWindows(frmHeptagon);
-            frmHeptagon.Show();
+            ShowFigureForm(new FrmHeptagon());
         }
 
         private void mnuRhombus_Click(object sender, EventArgs e)
         {
-            FrmRhombus frmRhombus = new FrmRhombus();
-            frmRhombus.MdiParent = this;
-            CenterWindows(frmRhombus);
-            frmRhombus.Show();
+            ShowFigureForm(new FrmRhombus());
         }
 
         private void mnuOctagon_Click(object sender, EventArgs e)
         {
-            FrmOctagon frmOctagon = new FrmOctagon();
-            frmOctagon.MdiParent = this;
-            CenterWindows(frmOctagon);
-            frmOctagon.Show();
-
-
+            ShowFigureForm(new FrmOctagon());
         }
 
         private void mnuPentagon_Click(object sender, EventArgs e)
         {
-            FrmPentagon frmPentagon = new FrmPentagon();
-            frmPentagon.MdiParent = this;
-            CenterWindows(frmPentagon);
-            frmPentagon.Show();
-
+            ShowFigureForm(new FrmPentagon());
         }
 
         private void mnuDecagon_Click(object sender, EventArgs e)
         {
-            FrmDecagon frmDecagon = new FrmDecagon();
-            frmDecagon.MdiParent = this;
-            CenterWindows(frmDecagon);
-            frmDecagon.Show();
+            ShowFigureForm(new FrmDecagon());
         }
 
         private void mnuHexagon_Click(object sender, EventArgs e)
         {
-            FrmHexagon frmHexagon = new FrmHexagon();
-            frmHexagon.MdiParent = this;
-            CenterWindows(frmHexagon);
-            frmHexagon.Show();
-
+            ShowFigureForm(new FrmHexagon());
         }
 
         private void mnuEnneagon_Click(object sender, EventArgs e)
         {
-            FrmEnneagon frmEnneagon = new FrmEnneagon();
-            frmEnneagon.MdiParent = this;
-            CenterWindows(frmEnneagon);
-            frmEnneagon.Show();
+            ShowFigureForm(new FrmEnneagon());
+        }
+
+        private void mnuTriangle_Click(object sender, EventArgs e)
+        {
+            ShowFigureForm(new FrmTriangle());
         }
     }
-    }
+}

@@ -41,7 +41,6 @@
             this.mnuSquare = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeltoid = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRhomboid = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuTrapezoid = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHeptagon = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRhombus = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,8 @@
             this.mnuDecagon = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHexagon = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEnneagon = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuTriangle = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             // mnuFigura
             // 
             this.mnuFigura.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTriangle,
             this.mnuCircle,
             this.mnuEllipse,
             this.mnuOval,
@@ -162,11 +164,6 @@
             this.mnuRhomboid.Text = "Romboide";
             this.mnuRhomboid.Click += new System.EventHandler(this.mnuRhomboid_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // mnuTrapezoid
             // 
             this.mnuTrapezoid.Name = "mnuTrapezoid";
@@ -223,6 +220,18 @@
             this.mnuEnneagon.Text = "Eneágono";
             this.mnuEnneagon.Click += new System.EventHandler(this.mnuEnneagon_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // mnuTriangle
+            // 
+            this.mnuTriangle.Name = "mnuTriangle";
+            this.mnuTriangle.Size = new System.Drawing.Size(180, 22);
+            this.mnuTriangle.Text = "Triángulo";
+            this.mnuTriangle.Click += new System.EventHandler(this.mnuTriangle_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,5 +274,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuDecagon;
         private System.Windows.Forms.ToolStripMenuItem mnuHexagon;
         private System.Windows.Forms.ToolStripMenuItem mnuEnneagon;
+        private System.Windows.Forms.ToolStripMenuItem mnuTriangle;
     }
 }
