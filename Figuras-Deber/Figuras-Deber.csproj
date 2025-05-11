@@ -46,14 +46,117 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FrmCircle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCircle.Designer.cs">
+      <DependentUpon>FrmCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDeltoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDeltoid.Designer.cs">
+      <DependentUpon>FrmDeltoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEllipse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEllipse.Designer.cs">
+      <DependentUpon>FrmEllipse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmIsoscelesTrapezoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIsoscelesTrapezoid.Designer.cs">
+      <DependentUpon>FrmIsoscelesTrapezoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmOval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmOval.Designer.cs">
+      <DependentUpon>FrmOval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRectangle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRectangle.Designer.cs">
+      <DependentUpon>FrmRectangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSquare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSquare.Designer.cs">
+      <DependentUpon>FrmSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTrapeze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTrapeze.Designer.cs">
+      <DependentUpon>FrmTrapeze.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmTriangle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTriangle.Designer.cs">
+      <DependentUpon>FrmTriangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRhomboid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRhomboid.Designer.cs">
+      <DependentUpon>FrmRhomboid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\Deltoid.cs" />
+    <Compile Include="Logic\Ellipse.cs" />
+    <Compile Include="Logic\IsoscelesTrapezoid.cs" />
+    <Compile Include="Logic\Oval.cs" />
+    <Compile Include="Logic\Rectangle.cs" />
+    <Compile Include="Logic\Rhomboid.cs" />
+    <Compile Include="Logic\Square.cs" />
+    <Compile Include="Logic\Trapeze.cs" />
+    <Compile Include="Logic\Triangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Logic\Circle.cs" />
+    <EmbeddedResource Include="Forms\FrmCircle.resx">
+      <DependentUpon>FrmCircle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDeltoid.resx">
+      <DependentUpon>FrmDeltoid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEllipse.resx">
+      <DependentUpon>FrmEllipse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIsoscelesTrapezoid.resx">
+      <DependentUpon>FrmIsoscelesTrapezoid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmOval.resx">
+      <DependentUpon>FrmOval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRectangle.resx">
+      <DependentUpon>FrmRectangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRhomboid.resx">
+      <DependentUpon>FrmRhomboid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSquare.resx">
+      <DependentUpon>FrmSquare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTrapeze.resx">
+      <DependentUpon>FrmTrapeze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTriangle.resx">
+      <DependentUpon>FrmTriangle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
