@@ -40,8 +40,16 @@
             this.mnuIsoscelesTrapezoid = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSquare = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeltoid = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuRhomboid = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuTrapezoid = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHeptagon = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRhombus = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuOctagon = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPentagon = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDecagon = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHexagon = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEnneagon = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +85,15 @@
             this.mnuIsoscelesTrapezoid,
             this.mnuSquare,
             this.mnuDeltoid,
-            this.mnuRhomboid});
+            this.mnuRhomboid,
+            this.mnuTrapezoid,
+            this.mnuHeptagon,
+            this.mnuRhombus,
+            this.mnuOctagon,
+            this.mnuPentagon,
+            this.mnuDecagon,
+            this.mnuHexagon,
+            this.mnuEnneagon});
             this.mnuFigura.Name = "mnuFigura";
             this.mnuFigura.Size = new System.Drawing.Size(55, 20);
             this.mnuFigura.Text = "Figura:";
@@ -139,17 +155,73 @@
             this.mnuDeltoid.Text = "Deltoide";
             this.mnuDeltoid.Click += new System.EventHandler(this.mnuDeltoid_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // mnuRhomboid
             // 
             this.mnuRhomboid.Name = "mnuRhomboid";
             this.mnuRhomboid.Size = new System.Drawing.Size(180, 22);
             this.mnuRhomboid.Text = "Romboide";
             this.mnuRhomboid.Click += new System.EventHandler(this.mnuRhomboid_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // mnuTrapezoid
+            // 
+            this.mnuTrapezoid.Name = "mnuTrapezoid";
+            this.mnuTrapezoid.Size = new System.Drawing.Size(180, 22);
+            this.mnuTrapezoid.Text = "Trapezoide";
+            this.mnuTrapezoid.Click += new System.EventHandler(this.mnuTrapezoid_Click);
+            // 
+            // mnuHeptagon
+            // 
+            this.mnuHeptagon.Name = "mnuHeptagon";
+            this.mnuHeptagon.Size = new System.Drawing.Size(180, 22);
+            this.mnuHeptagon.Text = "Heptágono";
+            this.mnuHeptagon.Click += new System.EventHandler(this.mnuHeptagon_Click);
+            // 
+            // mnuRhombus
+            // 
+            this.mnuRhombus.Name = "mnuRhombus";
+            this.mnuRhombus.Size = new System.Drawing.Size(180, 22);
+            this.mnuRhombus.Text = "Rombo";
+            this.mnuRhombus.Click += new System.EventHandler(this.mnuRhombus_Click);
+            // 
+            // mnuOctagon
+            // 
+            this.mnuOctagon.Name = "mnuOctagon";
+            this.mnuOctagon.Size = new System.Drawing.Size(180, 22);
+            this.mnuOctagon.Text = "Octágono";
+            this.mnuOctagon.Click += new System.EventHandler(this.mnuOctagon_Click);
+            // 
+            // mnuPentagon
+            // 
+            this.mnuPentagon.Name = "mnuPentagon";
+            this.mnuPentagon.Size = new System.Drawing.Size(180, 22);
+            this.mnuPentagon.Text = "Pentágono";
+            this.mnuPentagon.Click += new System.EventHandler(this.mnuPentagon_Click);
+            // 
+            // mnuDecagon
+            // 
+            this.mnuDecagon.Name = "mnuDecagon";
+            this.mnuDecagon.Size = new System.Drawing.Size(180, 22);
+            this.mnuDecagon.Text = "Decágono";
+            this.mnuDecagon.Click += new System.EventHandler(this.mnuDecagon_Click);
+            // 
+            // mnuHexagon
+            // 
+            this.mnuHexagon.Name = "mnuHexagon";
+            this.mnuHexagon.Size = new System.Drawing.Size(180, 22);
+            this.mnuHexagon.Text = "Hexágono";
+            this.mnuHexagon.Click += new System.EventHandler(this.mnuHexagon_Click);
+            // 
+            // mnuEnneagon
+            // 
+            this.mnuEnneagon.Name = "mnuEnneagon";
+            this.mnuEnneagon.Size = new System.Drawing.Size(180, 22);
+            this.mnuEnneagon.Text = "Eneágono";
+            this.mnuEnneagon.Click += new System.EventHandler(this.mnuEnneagon_Click);
             // 
             // FrmHome
             // 
@@ -185,5 +257,13 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSquare;
         private System.Windows.Forms.ToolStripMenuItem mnuDeltoid;
         private System.Windows.Forms.ToolStripMenuItem mnuRhomboid;
+        private System.Windows.Forms.ToolStripMenuItem mnuTrapezoid;
+        private System.Windows.Forms.ToolStripMenuItem mnuHeptagon;
+        private System.Windows.Forms.ToolStripMenuItem mnuRhombus;
+        private System.Windows.Forms.ToolStripMenuItem mnuOctagon;
+        private System.Windows.Forms.ToolStripMenuItem mnuPentagon;
+        private System.Windows.Forms.ToolStripMenuItem mnuDecagon;
+        private System.Windows.Forms.ToolStripMenuItem mnuHexagon;
+        private System.Windows.Forms.ToolStripMenuItem mnuEnneagon;
     }
 }

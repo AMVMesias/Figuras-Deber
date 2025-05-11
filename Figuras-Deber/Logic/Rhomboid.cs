@@ -137,34 +137,36 @@ namespace Figuras_Deber.Logic
             mgraphics.Clear(picCanvas.BackColor);
             mpen = new Pen(Color.DarkGreen, 2);
 
+            // Usar el mismo factor de escala que en Square
             float scaledBase = mBase * SF;
             float scaledHeight = mHeight * SF;
 
             // Convertir el ángulo a radianes
             float radians = mAngle * (float)Math.PI / 180.0f;
+            float scaledProjection = scaledHeight / (float)Math.Tan(radians);
 
-            // Calcular la proyección horizontal de la altura
-            float horizontalProjection = scaledHeight / (float)Math.Tan(radians);
+            // Calcular las dimensiones totales del romboide
+            float totalWidth = scaledBase + Math.Abs(scaledProjection);
 
             // Centrar el romboide en el canvas
-            float offsetX = (picCanvas.Width - scaledBase - horizontalProjection) / 2;
+            float offsetX = (picCanvas.Width - totalWidth + Math.Abs(scaledProjection)) / 2;
             float offsetY = (picCanvas.Height - scaledHeight) / 2;
 
             // Definir los cuatro puntos del romboide
             PointF[] points = new PointF[4];
-            points[0] = new PointF(offsetX + horizontalProjection, offsetY);               // Superior izquierdo
-            points[1] = new PointF(offsetX + horizontalProjection + scaledBase, offsetY);  // Superior derecho
-            points[2] = new PointF(offsetX + scaledBase, offsetY + scaledHeight);          // Inferior derecho
-            points[3] = new PointF(offsetX, offsetY + scaledHeight);                       // Inferior izquierdo
+            points[0] = new PointF(offsetX, offsetY);                              // Superior izquierdo
+            points[1] = new PointF(offsetX + scaledBase, offsetY);                 // Superior derecho
+            points[2] = new PointF(offsetX + scaledBase - scaledProjection, offsetY + scaledHeight);  // Inferior derecho
+            points[3] = new PointF(offsetX - scaledProjection, offsetY + scaledHeight);             // Inferior izquierdo
 
             mgraphics.DrawPolygon(mpen, points);
 
-            // Opcionalmente, dibujar la altura con línea punteada
+            // Dibujar la altura con línea punteada
             Pen dashPen = new Pen(Color.Gray, 1);
             dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             mgraphics.DrawLine(dashPen,
-                              points[3].X, points[3].Y,
-                              points[3].X, points[0].Y);
+                              points[0].X, points[0].Y,
+                              points[0].X, points[0].Y + scaledHeight);
         }
 
         public void CloseForm(Form form)

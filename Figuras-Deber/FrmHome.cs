@@ -140,5 +140,73 @@ namespace Figuras_Deber
             CenterWindows(frmRhomboid);
             frmRhomboid.Show();
         }
+
+        private void mnuTrapezoid_Click(object sender, EventArgs e)
+        {
+            FrmTrapezoid frmTrapezoid = new FrmTrapezoid();
+            frmTrapezoid.MdiParent = this;
+            CenterWindows(frmTrapezoid);
+            frmTrapezoid.Show();
+        }
+
+        private void mnuHeptagon_Click(object sender, EventArgs e)
+        {
+            FrmHeptagon frmHeptagon = new FrmHeptagon();
+            frmHeptagon.MdiParent = this;
+            CenterWindows(frmHeptagon);
+            frmHeptagon.Show();
+        }
+
+        private void mnuRhombus_Click(object sender, EventArgs e)
+        {
+            FrmRhombus frmRhombus = new FrmRhombus();
+            frmRhombus.MdiParent = this;
+            CenterWindows(frmRhombus);
+            frmRhombus.Show();
+        }
+
+        private void mnuOctagon_Click(object sender, EventArgs e)
+        {
+            FrmOctagon frmOctagon = new FrmOctagon();
+            frmOctagon.MdiParent = this;
+            CenterWindows(frmOctagon);
+            frmOctagon.Show();
+
+
+        }
+
+        private void mnuPentagon_Click(object sender, EventArgs e)
+        {
+            FrmPentagon frmPentagon = new FrmPentagon();
+            frmPentagon.MdiParent = this;
+            CenterWindows(frmPentagon);
+            frmPentagon.Show();
+
+        }
+
+        private void mnuDecagon_Click(object sender, EventArgs e)
+        {
+            FrmDecagon frmDecagon = new FrmDecagon();
+            frmDecagon.MdiParent = this;
+            CenterWindows(frmDecagon);
+            frmDecagon.Show();
+        }
+
+        private void mnuHexagon_Click(object sender, EventArgs e)
+        {
+            FrmHexagon frmHexagon = new FrmHexagon();
+            frmHexagon.MdiParent = this;
+            CenterWindows(frmHexagon);
+            frmHexagon.Show();
+
+        }
+
+        private void mnuEnneagon_Click(object sender, EventArgs e)
+        {
+            FrmEnneagon frmEnneagon = new FrmEnneagon();
+            frmEnneagon.MdiParent = this;
+            CenterWindows(frmEnneagon);
+            frmEnneagon.Show();
+        }
     }
     }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FrmDecagon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDecagon.Designer.cs">
+      <DependentUpon>FrmDecagon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmCircle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,17 +70,47 @@
     <Compile Include="Forms\FrmEllipse.Designer.cs">
       <DependentUpon>FrmEllipse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmEnneagon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEnneagon.Designer.cs">
+      <DependentUpon>FrmEnneagon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHeptagon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHeptagon.Designer.cs">
+      <DependentUpon>FrmHeptagon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHexagon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHexagon.Designer.cs">
+      <DependentUpon>FrmHexagon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmIsoscelesTrapezoid.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmIsoscelesTrapezoid.Designer.cs">
       <DependentUpon>FrmIsoscelesTrapezoid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmOctagon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmOctagon.Designer.cs">
+      <DependentUpon>FrmOctagon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmOval.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmOval.Designer.cs">
       <DependentUpon>FrmOval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPentagon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPentagon.Designer.cs">
+      <DependentUpon>FrmPentagon.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmRectangle.cs">
       <SubType>Form</SubType>
@@ -94,6 +130,18 @@
     <Compile Include="Forms\FrmTrapeze.Designer.cs">
       <DependentUpon>FrmTrapeze.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmTrapezoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTrapezoid.Designer.cs">
+      <DependentUpon>FrmTrapezoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRhombus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRhombus.Designer.cs">
+      <DependentUpon>FrmRhombus.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,14 +160,22 @@
     <Compile Include="Forms\FrmRhomboid.Designer.cs">
       <DependentUpon>FrmRhomboid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\Decagon.cs" />
     <Compile Include="Logic\Deltoid.cs" />
     <Compile Include="Logic\Ellipse.cs" />
+    <Compile Include="Logic\Enneagon.cs" />
+    <Compile Include="Logic\Heptagon.cs" />
+    <Compile Include="Logic\Hexagon.cs" />
     <Compile Include="Logic\IsoscelesTrapezoid.cs" />
+    <Compile Include="Logic\Octagon.cs" />
     <Compile Include="Logic\Oval.cs" />
+    <Compile Include="Logic\Pentagon.cs" />
     <Compile Include="Logic\Rectangle.cs" />
     <Compile Include="Logic\Rhomboid.cs" />
+    <Compile Include="Logic\Rhombus.cs" />
     <Compile Include="Logic\Square.cs" />
     <Compile Include="Logic\Trapeze.cs" />
+    <Compile Include="Logic\Trapezoid.cs" />
     <Compile Include="Logic\Triangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,17 +183,35 @@
     <EmbeddedResource Include="Forms\FrmCircle.resx">
       <DependentUpon>FrmCircle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDecagon.resx">
+      <DependentUpon>FrmDecagon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDeltoid.resx">
       <DependentUpon>FrmDeltoid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEllipse.resx">
       <DependentUpon>FrmEllipse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEnneagon.resx">
+      <DependentUpon>FrmEnneagon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHeptagon.resx">
+      <DependentUpon>FrmHeptagon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHexagon.resx">
+      <DependentUpon>FrmHexagon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmIsoscelesTrapezoid.resx">
       <DependentUpon>FrmIsoscelesTrapezoid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmOctagon.resx">
+      <DependentUpon>FrmOctagon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmOval.resx">
       <DependentUpon>FrmOval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPentagon.resx">
+      <DependentUpon>FrmPentagon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRectangle.resx">
       <DependentUpon>FrmRectangle.cs</DependentUpon>
@@ -145,11 +219,17 @@
     <EmbeddedResource Include="Forms\FrmRhomboid.resx">
       <DependentUpon>FrmRhomboid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRhombus.resx">
+      <DependentUpon>FrmRhombus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSquare.resx">
       <DependentUpon>FrmSquare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmTrapeze.resx">
       <DependentUpon>FrmTrapeze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTrapezoid.resx">
+      <DependentUpon>FrmTrapezoid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
