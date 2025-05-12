@@ -260,7 +260,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmTrapezoid";
-            this.Text = "FrmTrapezoid";
+            this.Text = "Trapecoide";
             this.Load += new System.EventHandler(this.FrmTrapezoid_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

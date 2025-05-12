@@ -222,7 +222,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmOval";
-            this.Text = "FrmOval";
+            this.Text = "Óvalo";
             this.Load += new System.EventHandler(this.FrmOval_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

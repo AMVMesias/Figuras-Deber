@@ -201,7 +201,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmSquare";
-            this.Text = "FrmSquare";
+            this.Text = "Cuadrado";
             this.Load += new System.EventHandler(this.FrmSquare_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

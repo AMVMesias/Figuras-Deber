@@ -222,7 +222,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmRhombus";
-            this.Text = "Rhombus";
+            this.Text = "Rombo";
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();
             this.grbProcess.ResumeLayout(false);

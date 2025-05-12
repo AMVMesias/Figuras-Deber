@@ -40,10 +40,10 @@
             this.grbCanvas = new System.Windows.Forms.GroupBox();
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.grbinputs = new System.Windows.Forms.GroupBox();
-            this.lblWidth = new System.Windows.Forms.Label();
-            this.txtWidth = new System.Windows.Forms.TextBox();
             this.lblHeigth = new System.Windows.Forms.Label();
             this.txtHeight = new System.Windows.Forms.TextBox();
+            this.lblWidth = new System.Windows.Forms.Label();
+            this.txtWidth = new System.Windows.Forms.TextBox();
             this.grbOutputs.SuspendLayout();
             this.grbProcess.SuspendLayout();
             this.grbCanvas.SuspendLayout();
@@ -178,6 +178,22 @@
             this.grbinputs.TabStop = false;
             this.grbinputs.Text = "Entrada";
             // 
+            // lblHeigth
+            // 
+            this.lblHeigth.AutoSize = true;
+            this.lblHeigth.Location = new System.Drawing.Point(53, 78);
+            this.lblHeigth.Name = "lblHeigth";
+            this.lblHeigth.Size = new System.Drawing.Size(58, 37);
+            this.lblHeigth.TabIndex = 4;
+            this.lblHeigth.Text = "ALtura";
+            // 
+            // txtHeight
+            // 
+            this.txtHeight.Location = new System.Drawing.Point(108, 75);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(100, 37);
+            this.txtHeight.TabIndex = 5;
+            // 
             // lblWidth
             // 
             this.lblWidth.AutoSize = true;
@@ -195,22 +211,6 @@
             this.txtWidth.Size = new System.Drawing.Size(100, 37);
             this.txtWidth.TabIndex = 3;
             // 
-            // lblHeigth
-            // 
-            this.lblHeigth.AutoSize = true;
-            this.lblHeigth.Location = new System.Drawing.Point(53, 78);
-            this.lblHeigth.Name = "lblHeigth";
-            this.lblHeigth.Size = new System.Drawing.Size(58, 37);
-            this.lblHeigth.TabIndex = 4;
-            this.lblHeigth.Text = "ALtura";
-            // 
-            // txtHeight
-            // 
-            this.txtHeight.Location = new System.Drawing.Point(108, 75);
-            this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(100, 37);
-            this.txtHeight.TabIndex = 5;
-            // 
             // FrmTriangle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,7 +221,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmTriangle";
-            this.Text = "FrmTriangle";
+            this.Text = "Triángulo";
             this.Load += new System.EventHandler(this.FrmTriangle_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

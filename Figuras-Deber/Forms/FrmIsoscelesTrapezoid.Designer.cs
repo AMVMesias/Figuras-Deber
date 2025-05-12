@@ -240,7 +240,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmIsoscelesTrapezoid";
-            this.Text = "FrmIsoscelesTrapezoid";
+            this.Text = "Trapecio (Isósceles)";
             this.Load += new System.EventHandler(this.FrmIsoscelesTrapezoid_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

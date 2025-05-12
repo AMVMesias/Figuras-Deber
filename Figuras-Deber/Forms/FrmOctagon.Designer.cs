@@ -200,7 +200,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmOctagon";
-            this.Text = "FrmOctagon";
+            this.Text = "Octágono";
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();
             this.grbProcess.ResumeLayout(false);

@@ -78,7 +78,7 @@ namespace Figuras_Deber.Logic
         {
             mgraphics = picCanvas.CreateGraphics();
             mgraphics.Clear(picCanvas.BackColor);
-            mpen = new Pen(Color.DarkOrange, 2);
+            mpen = new Pen(Color.DeepPink, 2);
 
             float scaledSide = mSide * SF;
 
@@ -91,7 +91,7 @@ namespace Figuras_Deber.Logic
 
             for (int i = 0; i < 10; i++)
             {
-                double angle = i * 2 * Math.PI / 10 - Math.PI / 2;
+                double angle = i * 2 * Math.PI / 10;
                 points[i] = new PointF(
                     centerX + radius * (float)Math.Cos(angle),
                     centerY + radius * (float)Math.Sin(angle)
@@ -102,7 +102,7 @@ namespace Figuras_Deber.Logic
 
             Pen dashPen = new Pen(Color.Gray, 1);
             dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            mgraphics.DrawLine(dashPen, centerX, centerY, centerX, centerY - radius);
+            mgraphics.DrawLine(dashPen, centerX, centerY, centerX + radius, centerY);
         }
 
         public void CloseForm(Form form)

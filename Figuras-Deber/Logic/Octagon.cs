@@ -80,18 +80,18 @@ namespace Figuras_Deber.Logic
 
             float scaledSide = mSide * SF;
 
-
-            float radius = scaledSide / (2 * (float)Math.Sin(Math.PI / 8));
-
             float centerX = picCanvas.Width / 2;
             float centerY = picCanvas.Height / 2;
 
+            float radius = scaledSide / (2 * (float)Math.Sin(Math.PI / 8));
+
             PointF[] points = new PointF[8];
+
+            double startAngle = Math.PI / 8;
 
             for (int i = 0; i < 8; i++)
             {
-
-                double angle = i * Math.PI / 4;
+                double angle = startAngle + i * Math.PI / 4;
                 points[i] = new PointF(
                     centerX + radius * (float)Math.Cos(angle),
                     centerY + radius * (float)Math.Sin(angle)
@@ -102,7 +102,12 @@ namespace Figuras_Deber.Logic
 
             Pen dashPen = new Pen(Color.Gray, 1);
             dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            mgraphics.DrawLine(dashPen, centerX, centerY, centerX + radius, centerY);
+
+            double angleToRightVertex = startAngle;
+            mgraphics.DrawLine(dashPen,
+                centerX, centerY,
+                centerX + radius * (float)Math.Cos(angleToRightVertex),
+                centerY + radius * (float)Math.Sin(angleToRightVertex));
         }
 
         public void CloseForm(Form form)

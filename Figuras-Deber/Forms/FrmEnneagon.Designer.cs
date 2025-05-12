@@ -200,7 +200,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmEnneagon";
-            this.Text = "FrmEnneagon";
+            this.Text = "Eneágono";
             this.Load += new System.EventHandler(this.FrmEnneagon_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

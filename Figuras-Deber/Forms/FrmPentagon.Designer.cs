@@ -200,7 +200,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmPentagon";
-            this.Text = "FrmPentagon";
+            this.Text = "Pentágono";
             this.Load += new System.EventHandler(this.FrmPentagon_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

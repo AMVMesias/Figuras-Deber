@@ -40,8 +40,8 @@
             this.grbCanvas = new System.Windows.Forms.GroupBox();
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.grbinputs = new System.Windows.Forms.GroupBox();
-            this.txtRadius = new System.Windows.Forms.TextBox();
             this.lblRadius = new System.Windows.Forms.Label();
+            this.txtRadius = new System.Windows.Forms.TextBox();
             this.grbOutputs.SuspendLayout();
             this.grbProcess.SuspendLayout();
             this.grbCanvas.SuspendLayout();
@@ -175,13 +175,6 @@
             this.grbinputs.Text = "Entrada";
             this.grbinputs.Enter += new System.EventHandler(this.grbinputs_Enter);
             // 
-            // txtRadius
-            // 
-            this.txtRadius.Location = new System.Drawing.Point(108, 26);
-            this.txtRadius.Name = "txtRadius";
-            this.txtRadius.Size = new System.Drawing.Size(100, 37);
-            this.txtRadius.TabIndex = 3;
-            // 
             // lblRadius
             // 
             this.lblRadius.AutoSize = true;
@@ -190,6 +183,13 @@
             this.lblRadius.Size = new System.Drawing.Size(56, 37);
             this.lblRadius.TabIndex = 1;
             this.lblRadius.Text = "Radio:";
+            // 
+            // txtRadius
+            // 
+            this.txtRadius.Location = new System.Drawing.Point(108, 26);
+            this.txtRadius.Name = "txtRadius";
+            this.txtRadius.Size = new System.Drawing.Size(100, 37);
+            this.txtRadius.TabIndex = 3;
             // 
             // FrmCircle
             // 
@@ -201,7 +201,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmCircle";
-            this.Text = "FrmCircle";
+            this.Text = "Circulo";
             this.Load += new System.EventHandler(this.FrmCircle_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

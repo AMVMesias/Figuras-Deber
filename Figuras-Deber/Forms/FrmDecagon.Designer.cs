@@ -200,7 +200,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmDecagon";
-            this.Text = "Decagon";
+            this.Text = "Decagono";
             this.Load += new System.EventHandler(this.FrmDecagon_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

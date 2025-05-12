@@ -222,7 +222,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmEllipse";
-            this.Text = "FrmEllipse";
+            this.Text = "Elipse";
             this.Load += new System.EventHandler(this.FrmEllipse_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

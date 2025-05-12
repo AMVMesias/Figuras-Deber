@@ -222,7 +222,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmDeltoid";
-            this.Text = "FrmDeltoid";
+            this.Text = "Deltoide";
             this.Load += new System.EventHandler(this.FrmDeltoid_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();

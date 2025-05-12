@@ -240,7 +240,7 @@
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
             this.Name = "FrmTrapeze";
-            this.Text = "FrmTrapeze";
+            this.Text = "Trapecio";
             this.Load += new System.EventHandler(this.FrmTrapeze_Load);
             this.grbOutputs.ResumeLayout(false);
             this.grbOutputs.PerformLayout();
