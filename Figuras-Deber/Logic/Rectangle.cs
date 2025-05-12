@@ -18,7 +18,7 @@ namespace Figuras_Deber.Logic
         private const float SF = 20;
         private Pen mPen;
 
-        //Constructor
+        
         public Rectangle()
         {
             mWidth = 0.0f; mHeight = 0.0f;
@@ -34,6 +34,13 @@ namespace Figuras_Deber.Logic
                 if (mWidth <= 0 || mHeight <= 0)
                 {
                     MessageBox.Show("Error: Todos los valores deben ser positivos.",
+                        "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                if (mWidth == mHeight)
+                {
+                    MessageBox.Show("Error: El ancho y el alto no pueden ser iguales.",
                         "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }

@@ -49,13 +49,11 @@ namespace Figuras_Deber.Logic
 
         public void CalculatePerimeter()
         {
-            // El perímetro de un octágono regular es 8 veces el lado
             mPerimeter = 8 * mSide;
         }
 
         public void CalculateArea()
         {
-            // El área de un octágono regular: 2(1+√2)·lado²
             mArea = 2 * (1 + Math.Sqrt(2)) * mSide * mSide;
         }
 
@@ -82,20 +80,17 @@ namespace Figuras_Deber.Logic
 
             float scaledSide = mSide * SF;
 
-            // Un octágono regular se puede inscribir en una circunferencia
-            // Calculamos el radio de la circunferencia circunscrita
+
             float radius = scaledSide / (2 * (float)Math.Sin(Math.PI / 8));
 
             float centerX = picCanvas.Width / 2;
             float centerY = picCanvas.Height / 2;
 
-            // Crear los 8 puntos del octágono
             PointF[] points = new PointF[8];
 
             for (int i = 0; i < 8; i++)
             {
-                // Calculamos cada punto usando funciones trigonométricas
-                // El ángulo entre cada punto es 45 grados (2π/8 radianes)
+
                 double angle = i * Math.PI / 4;
                 points[i] = new PointF(
                     centerX + radius * (float)Math.Cos(angle),
@@ -105,7 +100,6 @@ namespace Figuras_Deber.Logic
 
             mgraphics.DrawPolygon(mpen, points);
 
-            // Opcionalmente, dibujar el radio para visualización
             Pen dashPen = new Pen(Color.Gray, 1);
             dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             mgraphics.DrawLine(dashPen, centerX, centerY, centerX + radius, centerY);

@@ -62,7 +62,6 @@ namespace Figuras_Deber.Logic
                 Math.Pow(mDiagonalMajor / 2, 2) + Math.Pow(3 * mDiagonalMinor / 4, 2)
             );
 
-            // El perímetro es 2 veces la suma de ambos lados
             mPerimeter = 2 * (a + b);
         }
 
@@ -113,8 +112,8 @@ namespace Figuras_Deber.Logic
             // Dibujar las diagonales para visualizarlas
             Pen dashPen = new Pen(Color.Gray, 1);
             dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            mgraphics.DrawLine(dashPen, points[0], points[2]); // Diagonal vertical
-            mgraphics.DrawLine(dashPen, points[1], points[3]); // Diagonal horizontal
+            mgraphics.DrawLine(dashPen, points[0], points[2]); 
+            mgraphics.DrawLine(dashPen, points[1], points[3]); 
         }
 
         public void CloseForm(Form form)

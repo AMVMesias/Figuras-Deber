@@ -52,8 +52,7 @@ namespace Figuras_Deber.Logic
 
         public void CalculatePerimeter()
         {
-            // El perímetro del rombo es 4 veces el lado
-            // El lado se puede calcular usando el teorema de Pitágoras
+  
             float lado = (float)Math.Sqrt(
                 Math.Pow(mDiagonalMajor / 2, 2) + Math.Pow(mDiagonalMinor / 2, 2)
             );
@@ -63,7 +62,6 @@ namespace Figuras_Deber.Logic
 
         public void CalculateArea()
         {
-            // El área de un rombo es la mitad del producto de sus diagonales
             mArea = (mDiagonalMajor * mDiagonalMinor) / 2;
         }
 
@@ -96,20 +94,19 @@ namespace Figuras_Deber.Logic
             float centerX = picCanvas.Width / 2;
             float centerY = picCanvas.Height / 2;
 
-            // Definir los cuatro puntos del rombo usando las diagonales
             PointF[] points = new PointF[4];
-            points[0] = new PointF(centerX, centerY - scaledDiagonalMinor / 2);  // Punto superior
-            points[1] = new PointF(centerX + scaledDiagonalMajor / 2, centerY);  // Punto derecho
-            points[2] = new PointF(centerX, centerY + scaledDiagonalMinor / 2);  // Punto inferior
-            points[3] = new PointF(centerX - scaledDiagonalMajor / 2, centerY);  // Punto izquierdo
+            points[0] = new PointF(centerX, centerY - scaledDiagonalMinor / 2); 
+            points[1] = new PointF(centerX + scaledDiagonalMajor / 2, centerY);  
+            points[2] = new PointF(centerX, centerY + scaledDiagonalMinor / 2);  
+            points[3] = new PointF(centerX - scaledDiagonalMajor / 2, centerY);  
 
             mgraphics.DrawPolygon(mpen, points);
 
             // Dibujar las diagonales para visualizarlas
             Pen dashPen = new Pen(Color.Gray, 1);
             dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            mgraphics.DrawLine(dashPen, points[0], points[2]); // Diagonal vertical
-            mgraphics.DrawLine(dashPen, points[1], points[3]); // Diagonal horizontal
+            mgraphics.DrawLine(dashPen, points[0], points[2]); 
+            mgraphics.DrawLine(dashPen, points[1], points[3]); 
         }
 
         public void CloseForm(Form form)

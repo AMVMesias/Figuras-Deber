@@ -41,14 +41,14 @@ namespace Figuras_Deber.Logic
                 {
                     MessageBox.Show("Todos los valores deben ser mayores que cero.",
                         "Error de validación");
-                    return false; // Indicamos que la validación falló
+                    return false; 
                 }
 
                 if (mUpperBase >= mLowerBase)
                 {
                     MessageBox.Show("La base superior debe ser menor que la base inferior.",
                         "Error de validación");
-                    return false; // Indicamos que la validación falló
+                    return false; 
                 }
 
                 return true;
@@ -63,16 +63,13 @@ namespace Figuras_Deber.Logic
 
         public void PerimeterTrapeze()
         {
-            // Calculamos los dos lados laterales con diferentes longitudes
             float baseDifference = mLowerBase - mUpperBase;
 
-            // Lado izquierdo - usando offset para hacerlo asimétrico
             float leftSide = (float)Math.Sqrt(
                 Math.Pow(mHeight, 2) +
                 Math.Pow(baseDifference * mLeftOffset, 2)
             );
 
-            // Lado derecho - el resto de la diferencia
             float rightSide = (float)Math.Sqrt(
                 Math.Pow(mHeight, 2) +
                 Math.Pow(baseDifference * (1 - mLeftOffset), 2)
@@ -113,17 +110,16 @@ namespace Figuras_Deber.Logic
             float scaledHeight = mHeight * SF;
             float baseDifference = scaledLowerBase - scaledUpperBase;
 
-            // Coordenadas de la base inferior
             float x3 = (picCanvas.Width - scaledLowerBase) / 2;
             float y3 = (picCanvas.Height + scaledHeight) / 2;
 
             float x4 = x3 + scaledLowerBase;
             float y4 = y3;
 
-            float x1 = x3 + baseDifference * mLeftOffset; // vértice superior izquierdo
+            float x1 = x3 + baseDifference * mLeftOffset; 
             float y1 = y3 - scaledHeight;
 
-            float x2 = x1 + scaledUpperBase; // vértice superior derecho
+            float x2 = x1 + scaledUpperBase; 
             float y2 = y1;
 
             PointF[] points = {

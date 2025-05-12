@@ -16,7 +16,6 @@ namespace Figuras_Deber.Logic
         private float mSemiMinorAxis;
         private float mPerimeter;
         private float mArea;
-        //Sirve para escalar la figura
         private const float SF = 10f;
         private float pi = (float)Math.PI;
         public Oval()
@@ -81,30 +80,24 @@ namespace Figuras_Deber.Logic
         }
         public void PlotShape(PictureBox picCanvas)
         {
-            // Crear un bitmap para dibujar
             Bitmap bmp = new Bitmap(picCanvas.Width, picCanvas.Height);
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.Clear(picCanvas.BackColor); // Limpiar el fondo
+                g.Clear(picCanvas.BackColor); 
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                // Calcular dimensiones escaladas
                 float ovalWidth = mWidth * SF;
                 float ovalHeight = mHeight * SF;
 
-                // Centrar el óvalo en el PictureBox
                 float x = (picCanvas.Width - ovalWidth) / 2;
                 float y = (picCanvas.Height - ovalHeight) / 2;
 
-                // Dibujar un óvalo tipo huevo (asimetría en el eje X)
                 if (mWidth > 0 && mHeight > 0)
                 {
                     using (Pen pen = new Pen(Color.Black, 2))
                     {
-                        // Opción 1: Usar GraphicsPath para forma personalizada
                         System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
 
-                        // Crear puntos para un óvalo asimétrico (forma de huevo)
                         PointF[] points = new PointF[36]; // 36 puntos para suavidad
                         for (int i = 0; i < 36; i++)
                         {
@@ -123,7 +116,6 @@ namespace Figuras_Deber.Logic
                 }
             }
 
-            // Asignar el bitmap al PictureBox
             picCanvas.Image = bmp;
         }
         public void CloseForn(Form form)

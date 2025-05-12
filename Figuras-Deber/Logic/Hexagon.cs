@@ -84,7 +84,6 @@ namespace Figuras_Deber.Logic
 
             for (int i = 0; i < 6; i++)
             {
-                // Eliminamos el desfase de Math.PI / 6 para tener un vértice arriba
                 double angle = i * 2 * Math.PI / 6;
                 points[i] = new PointF(
                     centerX + radius * (float)Math.Cos(angle),
@@ -94,7 +93,6 @@ namespace Figuras_Deber.Logic
 
             mgraphics.DrawPolygon(mpen, points);
 
-            // Dibujar línea de apotema hacia un vértice
             Pen dashPen = new Pen(Color.Gray, 1);
             dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             float apothem = radius * (float)Math.Cos(Math.PI / 6);

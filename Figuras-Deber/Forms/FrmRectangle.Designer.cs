@@ -87,9 +87,9 @@
             this.lblHeight.AutoSize = true;
             this.lblHeight.Location = new System.Drawing.Point(27, 65);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(71, 37);
+            this.lblHeight.Size = new System.Drawing.Size(60, 37);
             this.lblHeight.TabIndex = 2;
-            this.lblHeight.Text = "Largo (b)";
+            this.lblHeight.Text = "Alto (b)";
             // 
             // txtWidth
             // 
@@ -213,7 +213,7 @@
             this.txtPerimeter.Size = new System.Drawing.Size(100, 33);
             this.txtPerimeter.TabIndex = 3;
             // 
-            // frmRectangle
+            // FrmRectangle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,7 +222,7 @@
             this.Controls.Add(this.grbProcess);
             this.Controls.Add(this.grbCanvas);
             this.Controls.Add(this.grbinputs);
-            this.Name = "frmRectangle";
+            this.Name = "FrmRectangle";
             this.Text = "Rectángulo";
             this.Load += new System.EventHandler(this.frmRectangle_Load);
             this.grbinputs.ResumeLayout(false);

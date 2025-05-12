@@ -82,18 +82,15 @@ namespace Figuras_Deber.Logic
 
             float scaledSide = mSide * SF;
 
-            // El radio de la circunferencia circunscrita para un decágono regular
             float radius = scaledSide / (2 * (float)Math.Sin(Math.PI / 10));
 
             float centerX = picCanvas.Width / 2;
             float centerY = picCanvas.Height / 2;
 
-            // Crear los 10 puntos del decágono
             PointF[] points = new PointF[10];
 
             for (int i = 0; i < 10; i++)
             {
-                // Restamos PI/2 para que el primer punto esté arriba
                 double angle = i * 2 * Math.PI / 10 - Math.PI / 2;
                 points[i] = new PointF(
                     centerX + radius * (float)Math.Cos(angle),
@@ -103,7 +100,6 @@ namespace Figuras_Deber.Logic
 
             mgraphics.DrawPolygon(mpen, points);
 
-            // Dibujar línea de referencia (radio)
             Pen dashPen = new Pen(Color.Gray, 1);
             dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             mgraphics.DrawLine(dashPen, centerX, centerY, centerX, centerY - radius);

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Figuras_Deber.Logic; // Asumiendo que Square está en este namespace
+using Figuras_Deber.Logic; // Asumiendo que Square y Deltoid están en este namespace
 
 namespace Figuras_Deber.Forms
 {

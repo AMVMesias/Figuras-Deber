@@ -1,17 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Figuras_Deber.Logic
 {
-    internal class Enneagon
+    public class Enneagon
     {
         private float mSide;
         private float mPerimeter;
         private float mArea;
-        private Graphics mgraphics;
-        private Pen mpen;
-        private const float SF = 10f;
+        private Graphics mGraph;
+        private Pen mPen;
+        private const float SF = 10; 
+        private const int SIDES = 9; 
 
         public Enneagon()
         {
@@ -28,7 +33,7 @@ namespace Figuras_Deber.Logic
 
                 if (mSide <= 0)
                 {
-                    MessageBox.Show("Error: El lado debe ser un valor positivo.",
+                    MessageBox.Show("Error: El lado debe ser positivo.",
                         "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
@@ -38,31 +43,36 @@ namespace Figuras_Deber.Logic
             catch
             {
                 MessageBox.Show("Error: Datos no válidos...",
-                    "Mensaje de error");
+                    "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
         public void CalculatePerimeter()
         {
-            mPerimeter = 9 * mSide;
+            mPerimeter = SIDES * mSide; 
         }
 
         public void CalculateArea()
         {
-            // Área de un eneágono regular: (9/4) * lado² * cot(π/9)
-            double cotPI9 = 1.0 / Math.Tan(Math.PI / 9);
-            mArea = (float)(9.0 / 4.0 * mSide * mSide * cotPI9);
+            // Fórmula para el área de un polígono regular: A = (n × s² × cot(π/n)) / 4
+            // Donde: n = número de lados, s = longitud del lado
+            double cotangent = 1.0 / Math.Tan(Math.PI / SIDES);
+            mArea = (float)((SIDES * mSide * mSide * cotangent) / 4.0);
         }
 
         public void PrintData(TextBox txtPerimeter, TextBox txtArea)
         {
-            txtPerimeter.Text = mPerimeter.ToString();
-            txtArea.Text = mArea.ToString();
+            txtPerimeter.Text = mPerimeter.ToString("F2");
+            txtArea.Text = mArea.ToString("F2");
         }
 
         public void InitializeData(TextBox txtSide, TextBox txtPerimeter, TextBox txtArea, PictureBox picCanvas)
         {
+            mSide = 0.0f;
+            mPerimeter = 0.0f;
+            mArea = 0.0f;
+
             txtSide.Text = "";
             txtPerimeter.Text = "";
             txtArea.Text = "";
@@ -72,40 +82,36 @@ namespace Figuras_Deber.Logic
 
         public void PlotShape(PictureBox picCanvas)
         {
-            mgraphics = picCanvas.CreateGraphics();
-            mgraphics.Clear(picCanvas.BackColor);
-            mpen = new Pen(Color.Teal, 2);
+            mGraph = picCanvas.CreateGraphics();
+            mGraph.Clear(Color.White);
+            mPen = new Pen(Color.Black, 2);
 
-            float scaledSide = mSide * SF;
-
-            float radius = scaledSide / (2 * (float)Math.Sin(Math.PI / 9));
             float centerX = picCanvas.Width / 2;
             float centerY = picCanvas.Height / 2;
 
-            PointF[] points = new PointF[9];
 
-            for (int i = 0; i < 9; i++)
+            float radius = (mSide * SF) / (2.0f * (float)Math.Sin(Math.PI / SIDES));
+
+            PointF[] points = new PointF[SIDES];
+            double angle = -Math.PI / 2; 
+
+            for (int i = 0; i < SIDES; i++)
             {
-                // Sin rotación adicional: vértice arriba
-                double angle = i * 2 * Math.PI / 9;
-                points[i] = new PointF(
-                    centerX + radius * (float)Math.Cos(angle),
-                    centerY + radius * (float)Math.Sin(angle)
-                );
+                float x = centerX + radius * (float)Math.Cos(angle);
+                float y = centerY + radius * (float)Math.Sin(angle);
+                points[i] = new PointF(x, y);
+                angle += 2 * Math.PI / SIDES; 
             }
 
-            mgraphics.DrawPolygon(mpen, points);
+            mGraph.DrawPolygon(mPen, points);
 
-            // Dibujar línea de apotema hacia arriba
-            Pen dashPen = new Pen(Color.Gray, 1);
-            dashPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            float apothem = radius * (float)Math.Cos(Math.PI / 9);
-            mgraphics.DrawLine(dashPen, centerX, centerY, centerX, centerY - apothem);
+            // Liberar recursos
+            mGraph.Dispose();
         }
 
-        public void CloseForm(Form form)
+        public void CloseForm(Form objForm)
         {
-            form.Close();
+            objForm.Close();
         }
     }
 }

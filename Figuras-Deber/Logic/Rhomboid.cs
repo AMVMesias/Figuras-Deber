@@ -12,7 +12,7 @@ namespace Figuras_Deber.Logic
     {
         private float mBase;
         private float mHeight;
-        private float mAngle;  // En grados (opcional)
+        private float mAngle;  
         private float mPerimeter;
         private float mArea;
         private Graphics mgraphics;
@@ -23,12 +23,11 @@ namespace Figuras_Deber.Logic
         {
             mBase = 0.0f;
             mHeight = 0.0f;
-            mAngle = 45.0f;  // Ángulo predeterminado si no se proporciona
+            mAngle = 45.0f;  
             mPerimeter = 0.0f;
             mArea = 0.0f;
         }
 
-        // Versión con base y altura
         public bool ReadData(TextBox txtBase, TextBox txtHeight)
         {
             try
@@ -43,7 +42,6 @@ namespace Figuras_Deber.Logic
                     return false;
                 }
 
-                // Por defecto, usamos un ángulo de 45 grados
                 mAngle = 45.0f;
                 return true;
             }
@@ -55,7 +53,6 @@ namespace Figuras_Deber.Logic
             }
         }
 
-        // Versión con base, altura y ángulo (opcional)
         public bool ReadData(TextBox txtBase, TextBox txtHeight, TextBox txtAngle)
         {
             try
@@ -88,17 +85,14 @@ namespace Figuras_Deber.Logic
 
         public void CalculatePerimeter()
         {
-            // Calcular el lado usando trigonometría
             float radians = mAngle * (float)Math.PI / 180.0f;
             float side = mHeight / (float)Math.Sin(radians);
 
-            // Perímetro = 2 * (base + lado)
             mPerimeter = 2 * (mBase + side);
         }
 
         public void CalculateArea()
         {
-            // Área = base * altura
             mArea = mBase * mHeight;
         }
 
@@ -137,27 +131,22 @@ namespace Figuras_Deber.Logic
             mgraphics.Clear(picCanvas.BackColor);
             mpen = new Pen(Color.DarkGreen, 2);
 
-            // Usar el mismo factor de escala que en Square
             float scaledBase = mBase * SF;
             float scaledHeight = mHeight * SF;
 
-            // Convertir el ángulo a radianes
             float radians = mAngle * (float)Math.PI / 180.0f;
             float scaledProjection = scaledHeight / (float)Math.Tan(radians);
 
-            // Calcular las dimensiones totales del romboide
             float totalWidth = scaledBase + Math.Abs(scaledProjection);
 
-            // Centrar el romboide en el canvas
             float offsetX = (picCanvas.Width - totalWidth + Math.Abs(scaledProjection)) / 2;
             float offsetY = (picCanvas.Height - scaledHeight) / 2;
 
-            // Definir los cuatro puntos del romboide
             PointF[] points = new PointF[4];
-            points[0] = new PointF(offsetX, offsetY);                              // Superior izquierdo
-            points[1] = new PointF(offsetX + scaledBase, offsetY);                 // Superior derecho
-            points[2] = new PointF(offsetX + scaledBase - scaledProjection, offsetY + scaledHeight);  // Inferior derecho
-            points[3] = new PointF(offsetX - scaledProjection, offsetY + scaledHeight);             // Inferior izquierdo
+            points[0] = new PointF(offsetX, offsetY);                             
+            points[1] = new PointF(offsetX + scaledBase, offsetY);                
+            points[2] = new PointF(offsetX + scaledBase - scaledProjection, offsetY + scaledHeight);  
+            points[3] = new PointF(offsetX - scaledProjection, offsetY + scaledHeight);             
 
             mgraphics.DrawPolygon(mpen, points);
 

@@ -70,6 +70,7 @@ namespace Figuras_Deber
         public void PlotShape(PictureBox picCanvas)
         {
             mgraphics = picCanvas.CreateGraphics();
+            mgraphics.Clear(Color.White);
 
             mpen = new Pen(Color.Red, 2);
             float triangleWidth = mWidth * SF;
@@ -80,9 +81,9 @@ namespace Figuras_Deber
             float offsetY = (picCanvas.Height - triangleHeight) / 2;
 
             PointF[] points = new PointF[3];
-            points[0] = new PointF(offsetX, offsetY + triangleHeight); // Esquina inferior izquierda
-            points[1] = new PointF(offsetX + triangleWidth, offsetY + triangleHeight); // Esquina inferior derecha
-            points[2] = new PointF(offsetX + (triangleWidth / 2), offsetY); // Vértice superior
+            points[0] = new PointF(offsetX, offsetY + triangleHeight); 
+            points[1] = new PointF(offsetX + triangleWidth, offsetY + triangleHeight); 
+            points[2] = new PointF(offsetX + (triangleWidth / 2), offsetY); 
 
             mgraphics.DrawPolygon(mpen, points);
         }
